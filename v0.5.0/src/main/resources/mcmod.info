@@ -1,0 +1,19 @@
+[
+  {
+    "modid": "quantum",
+    "name": "Quantum Continued",
+    "description": "1.12.2 Anarchy Crystal PvP Client",
+    "version": "0.5.0",
+    "mcversion": "1.12.2",
+    "logoFile": "quantum.png",
+    "url": "https://discord.gg/s4jhHmHDqt",
+    "updateUrl": "",
+    "authorList": [
+      "derpyjibs",
+      "ProfKambing",
+      "noatmc"
+    ],
+    "screenshots": [],
+    "dependencies": []
+  }
+]
