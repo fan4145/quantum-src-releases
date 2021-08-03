@@ -1,0 +1,19 @@
+[
+  {
+    "modid": "quantum",
+    "name": "Quantum",
+    "description": "client made for atomic bomb pvp",
+    "version": "0.5.1",
+    "mcversion": "1.12.2",
+    "logoFile": "Quantum.png",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "derpyjibs",
+      "ProfKambing",
+      "noatmc"
+    ],
+    "screenshots": [],
+    "dependencies": []
+  }
+]
