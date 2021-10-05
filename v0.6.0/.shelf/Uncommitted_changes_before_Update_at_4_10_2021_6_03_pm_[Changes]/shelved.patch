@@ -1,0 +1,54 @@
+Index: src/main/java/me/alpha432/oyvey/features/modules/misc/Lawnmower.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package me.alpha432.oyvey.features.modules.misc;\r\n\r\nimport me.alpha432.oyvey.features.modules.Module;\r\nimport me.alpha432.oyvey.features.setting.Setting;\r\nimport me.alpha432.oyvey.util.BlockUtil;\r\nimport net.minecraft.init.Blocks;\r\nimport net.minecraft.network.play.client.CPacketPlayerDigging;\r\nimport net.minecraft.util.EnumFacing;\r\nimport net.minecraft.util.math.BlockPos;\r\n\r\npublic class Lawnmower extends Module {\r\n    public Lawnmower() {\r\n\r\n        super(\"LawnMower\", \"haha funny meme\", Category.MISC, true, false, false);\r\n    }\r\n\r\n    public Setting<Integer> playerRange = new Setting<>(\"Range\", 6, 0, 6);\r\n    public Setting<Integer> playerHeight = new Setting<>(\"Height\", 6, 0, 6);\r\n\r\n    @Override\r\n    public void onUpdate() {\r\n        // code here haha funny\r\n        for (BlockPos pos : BlockUtil.getSphere(mc.player.getPosition(), playerRange.getValue().floatValue(), playerHeight.getValue(), false, true, 0)) {\r\n            if (!a(pos)) continue;\r\n            if (pos != null) { mc.player.connection.sendPacket(new CPacketPlayerDigging(CPacketPlayerDigging.Action.START_DESTROY_BLOCK, pos, EnumFacing.UP)); }\r\n        }\r\n    }\r\n\r\n    boolean a(final BlockPos pos) {\r\n        return mc.world.getBlockState(pos).getBlock() == Blocks.TALLGRASS || mc.world.getBlockState(pos).getBlock() == Blocks.DOUBLE_PLANT;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/me/alpha432/oyvey/features/modules/misc/Lawnmower.java b/src/main/java/me/alpha432/oyvey/features/modules/misc/Lawnmower.java
+--- a/src/main/java/me/alpha432/oyvey/features/modules/misc/Lawnmower.java	(revision b02f9261117abea0caa0d3bce3ed49639754f395)
++++ b/src/main/java/me/alpha432/oyvey/features/modules/misc/Lawnmower.java	(date 1633329813728)
+@@ -8,25 +8,28 @@
+ import net.minecraft.util.EnumFacing;
+ import net.minecraft.util.math.BlockPos;
+ 
+-public class Lawnmower extends Module {
+-    public Lawnmower() {
+-
+-        super("LawnMower", "haha funny meme", Category.MISC, true, false, false);
+-    }
+-
+-    public Setting<Integer> playerRange = new Setting<>("Range", 6, 0, 6);
+-    public Setting<Integer> playerHeight = new Setting<>("Height", 6, 0, 6);
++public
++class Lawnmower extends Module {
++    public Setting <Integer> playerRange = new Setting <>("Range", 6, 0, 6);
++    public Setting <Integer> playerHeight = new Setting <>("Height", 6, 0, 6);
+ 
++    public
++    Lawnmower() {
++        super("LawnMower", "haha funny meme", Category.MISC, true, false, false);
++    }
++
+     @Override
+-    public void onUpdate() {
+-        // code here haha funny
+-        for (BlockPos pos : BlockUtil.getSphere(mc.player.getPosition(), playerRange.getValue().floatValue(), playerHeight.getValue(), false, true, 0)) {
+-            if (!a(pos)) continue;
+-            if (pos != null) { mc.player.connection.sendPacket(new CPacketPlayerDigging(CPacketPlayerDigging.Action.START_DESTROY_BLOCK, pos, EnumFacing.UP)); }
++    public
++    void onUpdate() {
++        for (BlockPos pos : BlockUtil.getSphere(mc.player.getPosition(), playerRange.getValue(), playerHeight.getValue(), false, true, 0)) {
++            if (!check(pos)) continue;
++            if (pos != null) {
++                mc.player.connection.sendPacket(new CPacketPlayerDigging(CPacketPlayerDigging.Action.START_DESTROY_BLOCK, pos, EnumFacing.UP));
++            }
+         }
+     }
+ 
+-    boolean a(final BlockPos pos) {
++    boolean check(final BlockPos pos) {
+         return mc.world.getBlockState(pos).getBlock() == Blocks.TALLGRASS || mc.world.getBlockState(pos).getBlock() == Blocks.DOUBLE_PLANT;
+     }
+ }
+\ No newline at end of file
