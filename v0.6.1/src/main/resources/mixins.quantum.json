@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "me.derp.quantum.mixin.mixins",
+  "refmap": "mixins.quantum.refmap.json",
+  "mixins": [
+    "MixinBlock",
+    "MixinBlockFluidRenderer",
+    "MixinBlockModelRenderer",
+    "MixinEntity",
+    "MixinEntityPlayerSP",
+    "MixinEntityRenderer",
+    "MixinFontRenderer",
+    "MixinGuiNewChat",
+    "MixinGuiScreen",
+    "MixinGuiToast",
+    "MixinItemRenderer",
+    "MixinLayerArmorBase",
+    "MixinMinecraft",
+    "MixinNetworkManager",
+    "MixinPlayerControllerMP",
+    "MixinRenderEnderCrystal",
+    "MixinRenderLivingBase",
+    "MixinRenderPlayer",
+    "MixinVisGraph",
+    "MixinWorld"
+  ]
+}
